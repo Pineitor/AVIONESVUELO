@@ -34,6 +34,38 @@ def validarDatos():
         print("Banco seleccionado no válido. Vuelva a ingresar su banco: ")
         banco=int(input())
     return np.array([nom, rut, telefono, banco],dtype=object)
-    
+def dsctoDuoc(precio,dscto):
+    precio=precio-(precio*(dscto/100))
+    return precio
+
+def anularVuelo(reservaVuelo,listaAsientos):
+    opAnul=input(f"El asiento que usted tiene reservado es el {reservaVuelo[0]}. ¿Desea anular su reserva? (y/n): ")
+    while opAnul != 'y' and opAnul != 'n':
+        print("Opción no válida. Vuelva a intentarlo.")
+        opAnul=input(f"¿Desea anular la reserva de su asiento {reservaVuelo[0]}? (y/n): ")
+    if opAnul == 'y':
+        listaAsientos[reservaVuelo[1]]=reservaVuelo[0]
+        
+    else:
+        pass
+
+def verAsientos(listaAsientos):
+    print("Asientos con X ya se encuentran reservados.")
+    print(listaAsientos)
+    print("Seleccione la acción que desee realizar:")
+    print("1. Comprar asiento")
+    print("2. Volver al menú")
+    def modificarPasajero(datos, reservaVuelo):
+    rutPasajero = int(input("Ingrese el rut del pasajero que desea modificar: "))
+    asientoPasajero = int(input("Ingrese el asiento del pasajero que desea modificar: "))
+    print(type(datos[1]))
+    print(type(rutPasajero))
+    if rutPasajero == datos[1] and asientoPasajero == reservaVuelo[0]:
+        print("Pasajero válido.")
+        print("¿Qué dato desea modificar?")
+        print("1. Nombre del pasajero")
+        print("2. Teléfono del pasajero")
+        print("3. Cancelar acción")
+        opMod = int(input())
 
 

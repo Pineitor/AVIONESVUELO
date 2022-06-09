@@ -67,5 +67,25 @@ def verAsientos(listaAsientos):
         print("2. Teléfono del pasajero")
         print("3. Cancelar acción")
         opMod = int(input())
+        while opMod < 1 or opMod > 3:
+            print("Opción no válida. Vuelva a ingresar una opción: ")
+            opMod=int(input())
+        if opMod == 1:
+            print(f"Nombre del pasajero: {datos[0]}")
+            nomPasajero=input("Ingrese nuevo nombre: ")
+            datos[0] = nomPasajero
+            print("Nombre de pasajero actualizado. Regresando al menú.")
+        elif opMod == 2:
+            print(f"Teléfono del pasajero: {datos[2]}")
+            telPasajero=int(input("Ingrese nuevo teléfono (formato 9 dígitos sin +56): "))
+            while telPasajero < 199999999 or telPasajero > 999999999:
+                print("Teléfono ingresado no válido. Vuelva a ingresar su teléfono (formato 9 dígitos sin +56): ")
+                telPasajero=int(input())
+            datos[2] = telPasajero
+            print("Teléfono de pasajero actualizado. Regresando al menú.")
+        else:
+            print("Regresando al menú")
+    else:
+        print("Datos ingresados no corresponden a ningún pasajero. Regresando al menú.")
 
 

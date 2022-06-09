@@ -44,4 +44,30 @@ while initFlag == True:
                 print(f"Total a pagar: ${precioFinal}")
             if opVer == 2:
                 initFlag == True
+        if opmenu == 2:
+            print("Asientos con X ya se encuentran reservados.")
+            print(listaAsientos)
+            reservaVuelo = fn.comprarAsiento(listaAsientos)
+            if reservaVuelo[0] >= 1 and reservaVuelo[0]<31:
+                precio=AN
+            else:
+                precio=AV
+            datos = fn.validarDatos()
+            if datos[3] == 3:
+                precioFinal = fn.dsctoDuoc(precio,15)
+            else:
+                precioFinal = precio
+            print(f"Total a pagar: ${precioFinal}")
+
+        if opmenu == 3:
+            fn.anularVuelo(reservaVuelo,listaAsientos)
+
+        if opmenu == 4:
+            fn.modificarPasajero(datos,reservaVuelo)
+
+        if opmenu == 5:
+            initFlag == False
+            break
+    except:
+        print("Error de datos. Regresando al menú principal.")
 

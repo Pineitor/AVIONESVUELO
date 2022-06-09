@@ -55,7 +55,7 @@ def verAsientos(listaAsientos):
     print("Seleccione la acción que desee realizar:")
     print("1. Comprar asiento")
     print("2. Volver al menú")
-    def modificarPasajero(datos, reservaVuelo):
+def modificarPasajero(datos, reservaVuelo):
     rutPasajero = int(input("Ingrese el rut del pasajero que desea modificar: "))
     asientoPasajero = int(input("Ingrese el asiento del pasajero que desea modificar: "))
     print(type(datos[1]))
@@ -86,6 +86,6 @@ def verAsientos(listaAsientos):
         else:
             print("Regresando al menú")
     else:
-        print("Datos ingresados no corresponden a ningún pasajero. Regresando al menú.")
+        print("Datos ingresados no corresponden a ningún pasajero. Regresando al menú")
 
 
